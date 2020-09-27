@@ -1,5 +1,5 @@
 # AndroidMVVM
-<h1>ndroid + MVVM + Retrofit  </h1>
+<h1>Android + MVVM + Retrofit  </h1>
 
 MVVM: Model-View-ViewModel (MVVM) is a structural design pattern that separates objects into three distinct groups: Models hold application data. 
 
