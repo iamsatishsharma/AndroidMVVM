@@ -1,0 +1,72 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.example.androidmvvm"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            lintOptions {
+                checkReleaseBuilds false
+                // Or, if you prefer, you can continue to check for errors in release builds,
+                // but continue the build even when errors are found:
+                abortOnError false
+            }
+           // shrinkResources true
+            minifyEnabled true
+            debuggable false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "SERVER_URL", '"http://google.com"'
+
+        }
+        debug {
+            debuggable true
+            buildConfigField "String", "SERVER_URL", '"http://google.com"'
+
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.android.support:appcompat-v7:28'
+    implementation 'com.android.support:support-core-utils:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    // implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    
+    implementation 'com.kaopiz:kprogresshud:1.2.0'
+    implementation 'me.wangyuwei:ParticleView:1.0.4'
+    implementation 'com.akexorcist:localizationactivity:1.2.2'
+    // recycler view
+    implementation 'com.android.support:recyclerview-v7:23.3.0'
+    implementation('com.shagi:material-datepicker:1.3') {
+        exclude group: 'com.android.support'
+    }
+
+}
