@@ -33,12 +33,12 @@ jobs:
         ~/.gradle/wrapper
        key: ${{ runner.os }}-${{ hashFiles('**/*.gradle*') }}-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}-${{ hashFiles('**/buildSrc/**/*.kt') }}
 
-
-    - name: Build with Gradle
-      run: ./gradlew build
-
     - name: Make gradlew executable
       run: chmod +x ./gradlew
       
+    - name: Build with Gradle
+      run: ./gradlew build
+
+ 
       
       
