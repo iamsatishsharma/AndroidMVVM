@@ -70,3 +70,5 @@ public class CardModel extends BaseModel implements Parcelable {
     }
 
 }
+
+
